@@ -33,12 +33,34 @@ class DepWizard {
 
   trackChanges() {
     console.log('Tracking changes...');
-    // Implement change tracking logic here
+    // Example implementation for tracking changes
+    const changes = [];
+    for (const dep in this.dependencies) {
+      const currentVersion = this.dependencies[dep].replace('^', '');
+      const latestVersion = execSync(`npm show ${dep} version`).toString().trim();
+      if (currentVersion !== latestVersion) {
+        changes.push({ dep, currentVersion, latestVersion });
+      }
+    }
+    console.log('Changes tracked:', changes);
   }
 
   checkCompatibility() {
     console.log('Checking compatibility...');
-    // Implement compatibility check logic here
+    // Example implementation for compatibility check
+    const incompatibleDeps = [];
+    for (const dep in this.dependencies) {
+      try {
+        execSync(`npm ls ${dep}`);
+      } catch (error) {
+        incompatibleDeps.push(dep);
+      }
+    }
+    if (incompatibleDeps.length > 0) {
+      console.log('Incompatible dependencies found:', incompatibleDeps);
+    } else {
+      console.log('All dependencies are compatible.');
+    }
   }
 }
 
