@@ -19,6 +19,20 @@ npm install depwizard
 ## Usage
 
 Here is a basic example of how to use DepWizard:
+
+### Prerequisites
+
+Install Node.js from nodejs.org
+
+### Steps
+
+1. Download all files from the repository.
+2. Navigate to the DepWizard directory.
+3. cd path/to/depwizard
+4. Run the script:
+```bash
+node code.js
+```
 ```JavaScript
 const depwizard = require('depwizard');
 
@@ -35,5 +49,6 @@ manager.applyUpdates();
 
 Contributions are welcome! Please fork the repository and submit a pull request.
 
-License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/ItomdabomI/Depwizard/edit/main/LICENSE.txt) file for details.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
