@@ -33,6 +33,7 @@ class DepWizard {
 
   trackChanges() {
     console.log('Tracking changes...');
+    // Example implementation for tracking changes
     const changes = [];
     for (const dep in this.dependencies) {
       const currentVersion = this.dependencies[dep].replace('^', '');
@@ -46,6 +47,7 @@ class DepWizard {
 
   checkCompatibility() {
     console.log('Checking compatibility...');
+    // Example implementation for compatibility check
     const incompatibleDeps = [];
     for (const dep in this.dependencies) {
       try {
@@ -62,6 +64,13 @@ class DepWizard {
   }
 }
 
+// Initialize DepWizard and call the methods
+const manager = new DepWizard();
+manager.checkForUpdates();
+manager.applyUpdates();
+manager.trackChanges();
+manager.checkCompatibility();
+
 module.exports = {
-  init: () => new DepWizard()
+  init: () => manager
 };
